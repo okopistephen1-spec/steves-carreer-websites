@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STEVES WEB CAREER</title>
+
+    <style>
+        h1 {
+            font-size: 55px;
+            font-family: Arial;
+            color: rgba(10, 10, 100, 0.884);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: Arial;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        #banner {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        #container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+        }
+     
+    </style>
+</head>
+
+<body>
+
+    <h1>STEVES WEB CAREER</h1>
+
+    <p>Hello there, you will learn about the job opening at steves here</p>
+
+    <img id="banner"
+         src="https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=500&auto=format&fit=crop&q=60"
+         height="320"
+         width="400">
+
+    <h2>About Steves Web Career</h2>
+
+    <div id="container">
+        <p class="bodytext">
+            Steves Web Career is a technology platform designed to help people learn, practice, and progress in programming. The website provides users with useful resources and guidance that can help beginners build their coding knowledge and help experienced developers improve their skills. Whether you are just starting your programming journey or looking to develop your existing abilities, Steves Web Career gives you a place to learn, practice, and grow with confidence.
+
+The platform also helps users organize and store their important programming data and projects in one place. Instead of losing track of the work they have created while learning, users can keep their projects organized and continue improving them over time. This makes it easier to monitor personal progress, build a portfolio, and have examples of completed work that can demonstrate their programming abilities to potential employers and clients.
+
+Steves Web Career is also focused on helping users turn their technical skills into real career opportunities. The website can help users discover good and well-paying jobs in the technology industry, giving programmers an opportunity to connect their skills with employers who are looking for talented people. By combining learning, project development, data organization, and career opportunities, Steves Web Career aims to help users move from learning programming to building a successful career in technology.
+        </p>
+    </div>
+
+    <h3>Job Openings</h3>
+
+    <p class="bodytext">
+    <h4 class = "text-center mt-2 mb-4">Open Position</h4>
+        <div>
+        |    {% for job in jobs %}
+        <div>{{job['title']}}</div>
+            {% endfor %}
+        </div>
+        
+    </p>
+
+    <div style="text-align: center;">
+        <button class="btn">Contact Us</button>
+    </div>
+
+    <p style="text-align: center;">
+        Copyright 2026, Okopi Stephen
+    </p>
+
+</body>
+</html>
