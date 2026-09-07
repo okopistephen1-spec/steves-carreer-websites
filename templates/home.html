@@ -41,6 +41,28 @@
             background-color: blue;
             color: white;
         }
+
+        .job {
+    border-bottom: 1px solid rgb(200, 200, 200);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+        }
+
+        .apply-btn {
+    background-color: transparent;
+    color: blue;
+    border: 1px solid blue;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+        }
+
+         .apply-btn:hover {
+    background-color: blue;
+    color: white;
+    }
+
+
      
     </style>
 </head>
@@ -67,22 +89,37 @@ The platform also helps users organize and store their important programming dat
 Steves Web Career is also focused on helping users turn their technical skills into real career opportunities. The website can help users discover good and well-paying jobs in the technology industry, giving programmers an opportunity to connect their skills with employers who are looking for talented people. By combining learning, project development, data organization, and career opportunities, Steves Web Career aims to help users move from learning programming to building a successful career in technology.
         </p>
     </div>
+    
+<h3>Job Openings</h3>
 
-    <h3>Job Openings</h3>
+<h4 class="text-center mt-2 mb-4">Open Positions</h4>
 
-    <p class="bodytext">
-    <h4 class = "text-center mt-2 mb-4">Open Position</h4>
-        <div>
-        |    {% for job in jobs %}
-        <div>{{job['title']}}</div>
-            {% endfor %}
+{% for job in jobs %}
+    <div class="job">
+
+        <h5 style="font-size: 28px; color: rgb(120, 120, 120); margin-bottom: 4px;">
+            {{ job['title'] }}
+        </h5>
+
+        <div><b>Location:</b> {{ job['location'] }}</div>
+        <div><b>Salary:</b> {{ job['salary'] }}</div>
+
+        <div style="text-align: right;">
+            <button type="button" class="apply-btn">
+            Apply
+            </button>
+
         </div>
-        
-    </p>
 
-    <div style="text-align: center;">
-        <button class="btn">Contact Us</button>
     </div>
+{% endfor %}
+
+
+
+
+<div style="text-align: center;">
+    <button class="btn">Contact Us</button>
+</div>
 
     <p style="text-align: center;">
         Copyright 2026, Okopi Stephen
