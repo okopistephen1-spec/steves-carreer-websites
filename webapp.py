@@ -22,6 +22,13 @@ JOBS = [
     'location': 'Asa 3',
     'salary': 'N300,000',
     },
+
+      {
+    'id': 3,
+    'title': 'Affiliate Marketer',
+    'location': 'Oju',
+    'salary': 'N125,000',
+    },
     
 
     
