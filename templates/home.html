@@ -1,141 +1,374 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steves Web Career</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
-    <style>
-        h1 {
-            font-size: 55px;
-            font-family: Arial;
-            color: rgba(10, 10, 100, 0.884);
-            text-align: center;
-        }
+    <title>Steves Web Career | Build Your Future</title>
 
-        h2 {
-            font-family: Arial;
-            font-size: 32px;
-            font-weight: bold;
-            text-align: center;
-        }
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 
-        h3 {
-            text-align: center;
-        }
-
-        #banner {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            margin-bottom: 17px;
-        }
-
-        .contact-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: blue;
-            color: white;
-        }
-           .contact-btn:hover {
-    background-color: rgb(255, 162, 0);
-    color: white;
-    }
-
-        .job {
-    border-bottom: 1px solid rgb(200, 200, 200);
-    padding-bottom: 20px;
-    margin-bottom: 25px;
-        }
-
-        .apply-btn {
-    background-color: transparent;
-    color: blue;
-    border: 1px solid blue;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-        }
-
-         .apply-btn:hover {
-    background-color: blue;
-    color: white;
-    }
-
-
-     
-    </style>
-    <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-  rel="stylesheet"
->
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 </head>
 
 <body>
+
     {% include 'navbar.html' %}
-   
 
-    <h1>STEVES WEB CAREER</h1>
+    <!-- HERO SECTION -->
+    <section class="hero">
 
-    <p>Hello there, you will learn about the job opening at steves here</p>
+        <div class="hero-content">
 
-    <img id="banner"
-         src="https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=500&auto=format&fit=crop&q=60"
-         height="320"
-         width="400">
+            <div class="badge-text">
+                🚀 YOUR FUTURE STARTS AT STEVES CAREER WEB
+            </div>
 
-    <h2>About Steves Web Career</h2>
+            <h1>
+                Build Your Skills With our Steves Web.
+                <span>Build Your Career.</span>
+            </h1>
 
-    <div id="container">
-        <div class="content">
-        <p class="bodytext">
-            Steves Web Career is a technology platform designed to help people learn, practice, and progress in programming. The website provides users with useful resources and guidance that can help beginners build their coding knowledge and help experienced developers improve their skills. Whether you are just starting your programming journey or looking to develop your existing abilities, Steves Web Career gives you a place to learn, practice, and grow with confidence.
+            <p>
+                Learn programming, build real projects, develop your
+                skills, and discover exciting technology careers.
+            </p>
 
-The platform also helps users organize and store their important programming data and projects in one place. Instead of losing track of the work they have created while learning, users can keep their projects organized and continue improving them over time. This makes it easier to monitor personal progress, build a portfolio, and have examples of completed work that can demonstrate their programming abilities to potential employers and clients.
+            <div class="hero-buttons">
 
-Steves Web Career is also focused on helping users turn their technical skills into real career opportunities. The website can help users discover good and well-paying jobs in the technology industry, giving programmers an opportunity to connect their skills with employers who are looking for talented people. By combining learning, project development, data organization, and career opportunities, Steves Web Career aims to help users move from learning programming to building a successful career in technology.
-        </p>
-       
-<h3>Our Available Jobs</h3>
+                <a href="#jobs" class="primary-btn">
+                    Explore Jobs →
+                </a>
 
-<h4 class="text-center mt-2 mb-4">Open Positions</h4>
+                <a href="#about" class="secondary-btn">
+                    Learn More
+                </a>
 
-{% for job in jobs %}
-    <div class="job">
+            </div>
 
-        <h5 style="font-size: 28px; color: rgb(120, 120, 120); margin-bottom: 4px;">
-            {{ job['title'] }}
-        </h5>
+            <div class="hero-stats">
 
-        <div><b>Location:</b> {{ job['location'] }}</div>
-        <div><b>Salary:</b> {{ job['salary'] }}</div>
+                <div>
+                    <strong>100+</strong>
+                    <span>Learning Resources</span>
+                </div>
 
-        <div style="text-align: right;">
-            <a href="http://google.com" type="button" class="apply-btn">
-            Apply
-            </a>
+                <div>
+                    <strong>50+</strong>
+                    <span>Career Opportunities</span>
+                </div>
+
+                <div>
+                    <strong>1K+</strong>
+                    <span>Developers</span>
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
-{% endfor %}
+        <div class="hero-image">
+
+            <div class="code-window">
+
+                <div class="window-top">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+
+                <div class="code-content">
+                    <p><span class="purple">const</span> career = {</p>
+                    <p>&nbsp;&nbsp;skills: <span class="green-text">"python"</span>,</p>
+                    <p>&nbsp;&nbsp;experience: <span class="orange">"Growing"</span>,</p>
+                    <p>&nbsp;&nbsp;future: <span class="blue">"Unlimited"</span></p>
+                    <p>};</p>
+                    <br>
+                    <p>
+                        <span class="purple">console</span>.log(
+                        <span class="green-text">career</span>);
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+
+        <div class="section-label">
+            ABOUT US
+        </div>
+
+        <h2>
+            Everything You Need To
+            <span>Grow Your Career</span>
+        </h2>
+
+        <p class="section-description">
+            Steves Web Career is a technology platform designed to help
+            aspiring and experienced developers learn, practice, build
+            projects, and discover career opportunities.
+        </p>
+
+
+        <div class="features">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    💻
+                </div>
+
+                <h3>Learn Programming with Our Web</h3>
+
+                <p>
+                    Improve your programming knowledge with practical
+                    resources designed for developers at every level.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🚀
+                </div>
+
+                <h3>Build Projects</h3>
+
+                <p>
+                    Turn your knowledge into real-world projects that
+                    demonstrate your skills and strengthen your portfolio.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    💼
+                </div>
+
+                <h3>Find Opportunities here</h3>
+
+                <p>
+                    Discover technology jobs and connect your skills
+                    with exciting career opportunities with Steves Web.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOB SECTION -->
+    <section id="jobs" class="jobs-section">
+
+        <div class="section-label">
+            CAREER OPPORTUNITIES
+        </div>
+
+        <h2>
+            Find Your Next
+            <span>Opportunity</span>
+        </h2>
+
+        <p class="section-description">
+            Explore some of the latest technology opportunities available
+            on Steves Web Career.
+        </p>
+
+
+       <form action="/jobs" method="GET" class="job-search">
+
+    <input
+        type="text"
+        name="search"
+        placeholder="🔍 Search for a job..."
+    >
+
+    <select name="location">
+
+        <option value="">All Locations</option>
+        <option value="Lagos">Lagos</option>
+        <option value="Remote">Remote</option>
+        <option value="Abuja">Abuja</option>
+
+    </select>
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
 
 
 
+        <!-- JOB CARDS -->
+        <div class="jobs-container">
 
-<div style="text-align: center;">
-    <button class="contact-btn">Contact Us</button>
-</div>
+            {% for job in jobs %}
 
-    <p style="text-align: center;">
-        Copyright 2027, Okopi Stephen
+            <div class="job-card">
+
+                <div class="job-header">
+
+                    <div class="company-logo">
+                        {{ job['title'][0] }}
+                    </div>
+
+                    <div class="job-type">
+                        FULL TIME
+                    </div>
+
+                </div>
+
+
+                <h3 class="job-title">
+                    {{ job['title'] }}
+                </h3>
+
+
+                <div class="job-info">
+
+                    <span>
+                        📍 {{ job['location'] }}
+                    </span>
+
+                    <span>
+                        💰 {{ job['salary'] }}
+                    </span>
+
+                </div>
+
+
+                <div class="job-footer">
+
+                    <span class="posted">
+                        🕐 Recently posted
+                    </span>
+
+                    <a href="/apply/{{ job['id'] }}" class="apply-btn">
+                        Apply Now →
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta-section">
+
+        <div>
+
+            <div class="section-label">
+                START YOUR JOURNEY WITH STEVES WEB CAREER 
+            </div>
+
+            <h2>
+                Ready To Build Your
+                <span>Future?</span>
+            </h2>
+
+            <p>
+                Start learning, start building, and take the next step
+                toward your technology career.
+            </p>
+
+            <button class="contact-btn">
+                Contact Us →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    {% include 'footer.html' %}
+
+    <p class="copyright">
+        © 2026 Steves Web Career. All rights reserved.
     </p>
- {% include 'footer.html' %}
+
+
+    <!-- SEARCH SCRIPT -->
+    <script>
+
+        const searchInput = document.getElementById("jobSearch");
+        const locationFilter =
+            document.getElementById("locationFilter");
+
+        const jobs = document.querySelectorAll(".job-card");
+
+
+        function filterJobs() {
+
+            const search =
+                searchInput.value.toLowerCase();
+
+            const location =
+                locationFilter.value.toLowerCase();
+
+
+            jobs.forEach(job => {
+
+                const text =
+                    job.innerText.toLowerCase();
+
+                const matchesSearch =
+                    text.includes(search);
+
+                const matchesLocation =
+                    location === "" ||
+                    text.includes(location);
+
+
+                if (matchesSearch && matchesLocation) {
+
+                    job.style.display = "block";
+
+                } else {
+
+                    job.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+
+        searchInput.addEventListener(
+            "input",
+            filterJobs
+        );
+
+        locationFilter.addEventListener(
+            "change",
+            filterJobs
+        );
+
+    </script>
+
 </body>
 </html>

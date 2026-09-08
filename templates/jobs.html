@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Jobs | Steves Web Career</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+
+    <section class="jobs-section">
+
+        <div class="section-label">
+            JOB SEARCH
+        </div>
+
+        <h1>
+            Find Your Next
+            <span>Career Opportunity</span>
+        </h1>
+
+        <p class="section-description">
+            Search through available technology jobs.
+        </p>
+
+
+        <!-- SEARCH -->
+
+        <form action="/jobs"
+              method="GET"
+              class="job-search">
+
+            <input
+                type="text"
+                name="search"
+                value="{{ search }}"
+                placeholder="🔍 Search for a job..."
+            >
+
+            <select name="location">
+
+                <option value="">All Locations</option>
+
+                <option value="Lagos"
+                    {% if location == "Lagos" %}selected{% endif %}>
+                    Lagos
+                </option>
+
+                <option value="Remote"
+                    {% if location == "Remote" %}selected{% endif %}>
+                    Remote
+                </option>
+
+                <option value="Abuja"
+                    {% if location == "Abuja" %}selected{% endif %}>
+                    Abuja
+                </option>
+
+            </select>
+
+            <button type="submit"
+                    class="primary-btn">
+                Search
+            </button>
+
+        </form>
+
+
+        <!-- JOBS -->
+
+        <div class="jobs-container">
+
+            {% for job in jobs %}
+
+            <div class="job-card">
+
+                <div class="job-header">
+
+                    <div class="company-logo">
+                        {{ job['title'][0] }}
+                    </div>
+
+                    <div class="job-type">
+                        FULL TIME
+                    </div>
+
+                </div>
+
+
+                <h3 class="job-title">
+                    {{ job['title'] }}
+                </h3>
+
+
+                <div class="job-info">
+
+                    <span>
+                        📍 {{ job['location'] }}
+                    </span>
+
+                    <span>
+                        💰 {{ job['salary'] }}
+                    </span>
+
+                </div>
+
+
+                <!-- APPLY BUTTON -->
+
+                <a href="/apply/{{ job['id'] }}"
+                   class="apply-btn">
+
+                    Apply Now →
+
+                </a>
+
+            </div>
+
+            {% else %}
+
+            <div class="no-jobs">
+
+                <h3>No jobs found</h3>
+
+                <p>
+                    Try searching for another position.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    {% include 'footer.html' %}
+
+</body>
+</html>

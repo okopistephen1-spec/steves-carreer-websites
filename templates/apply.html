@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Apply for {{ job['title'] }} | Steves Web Career</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        .apply-page {
+            min-height: 100vh;
+            padding: 80px 20px;
+            background: #070b17;
+        }
+
+        .application-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .job-summary {
+            background: #111827;
+            border: 1px solid #26334d;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .job-summary h1 {
+            color: white;
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .job-summary p {
+            color: #94a3b8;
+            margin: 8px 0;
+        }
+
+        .application-form {
+            background: #0d1424;
+            border: 1px solid #1e293b;
+            border-radius: 15px;
+            padding: 35px;
+        }
+
+        .application-form h2 {
+            color: white;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            background: #111827;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: white;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #6366f1;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-application {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .submit-application:hover {
+            opacity: 0.9;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #93c5fd;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {% include 'navbar.html' %}
+
+
+    <section class="apply-page">
+
+        <div class="application-container">
+
+            <a href="/jobs" class="back-link">
+                ← Back to Jobs
+            </a>
+
+
+            <!-- JOB INFORMATION -->
+
+            <div class="job-summary">
+
+                <h1>
+                    {{ job['title'] }}
+                </h1>
+
+                <p>
+                    📍 <strong>Location:</strong>
+                    {{ job['location'] }}
+                </p>
+
+                <p>
+                    💰 <strong>Salary:</strong>
+                    {{ job['salary'] }}
+                </p>
+
+            </div>
+
+
+            <!-- APPLICATION FORM -->
+
+            <div class="application-form">
+
+                <h2>
+                    Apply for this position
+                </h2>
+
+
+                <form
+                    action="/apply/{{ job['id'] }}"
+                    method="POST"
+                >
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="portfolio">
+                            Portfolio / GitHub URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="portfolio"
+                            name="portfolio"
+                            placeholder="https://github.com/yourusername"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="cover_letter">
+                            Cover Letter
+                        </label>
+
+                        <textarea
+                            id="cover_letter"
+                            name="cover_letter"
+                            placeholder="Tell us why you are a good fit for this position..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="resume">
+                            Upload Resume
+                        </label>
+
+                        <input
+                            type="file"
+                            id="resume"
+                            name="resume"
+                            accept=".pdf,.doc,.docx"
+                        >
+
+                    </div>
+
+
+                    <a href="https://remotejobs.io"
+                        type="submit"
+                        class="submit-application"
+                    >
+                        Submit Application →
+                </a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    {% include 'footer.html' %}
+
+</body>
+
+</html>
